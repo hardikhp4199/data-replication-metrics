@@ -1,0 +1,25 @@
+{
+    "KafkaBatchSize" : 1,
+    "WaitBetweenBatches_MiliSecond" : 2000,
+    "MaxInActiveTime_Minute" :3,
+    "LogLevel":"debug",
+    "Kafka": {
+        "Host": "192.168.26.5:30940",
+        "AutoCommit": false,
+        "Topics": {
+            "SourceTopic": "go_training_hardik"
+        },
+        "ConsumerGroup" : "dr_cbtocb_metrics_exporter",
+        "TerminationSignalWatchInterval_Second": "3",
+        "Encryption":{
+            "SecurityProtocol":"sasl_ssl",
+            "SaslMechanism":"SCRAM-SHA-512",
+            "SSLCALocation":"./cert/ssl.ca",
+            "SASLUsername":"kafka-scram-client-credential",
+            "SASLPassword":"MWM1Nl97hsCEp3XghfENTD1dla7mrIBu"
+        }
+    },
+    "HttpServer": {
+        "Port": 8000
+    }
+}
